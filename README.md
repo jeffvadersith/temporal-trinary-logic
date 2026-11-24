@@ -19,10 +19,13 @@ Unlike standard binary logic or traditional three-valued logic systems—where u
 ## Repository Contents
 * **[Temporal_Trinary_Logic_v2_4.pdf](./Temporal_Trinary_Logic_v2_4.pdf)** — Primary technical specification, formal state-transition rules, dual-rail T-Lock architecture, and power-gating analysis.
 * **[Temporal_Trinary_Sim_v2_4.pdf](./Temporal_Trinary_Sim_v2_4.pdf)** — Complete cycle-accurate Python verification source code and benchmark results across three workloads:
+
   * **Test A:** Sparse Tree Traversal (branch pruning)
   * **Test B:** Streaming Packet Filtering (pipeline gating)
   * **Test C:** MAC Operand Gating (dynamic switching reduction)
-
+* **[temporal_trinary_sim.py](./temporal_trinary_sim.py)** — Standalone Python simulation script reproducing Tests A, B, and C.
+* **[t_lock_core.v](./t_lock_core.v)** — Synthesizable Verilog RTL implementation of the dual-rail `[Alive, Active]` T-Lock cell.
+* **[t_lock_tb.v](./t_lock_tb.v)** — Self-checking Verilog testbench verifying state transitions, lockup irreversibility, and global reset recovery.
 ---
 
 ## Live Hardware RTL Simulation
